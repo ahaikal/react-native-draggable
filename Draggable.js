@@ -48,6 +48,8 @@ export default function Draggable(props) {
     minY,
     maxX,
     maxY,
+    key,
+    id
   } = props;
 
   // The Animated object housing our xy value so that we can spring back
@@ -93,7 +95,7 @@ export default function Draggable(props) {
     (e, gestureState) => {
       isDragging.current = false;
       if (onDragRelease) {
-        onDragRelease(e, gestureState, getBounds());
+        onDragRelease(e, gestureState, getBounds(), {id, key});
         onRelease(e, true);
       }
       if (!shouldReverse) {
