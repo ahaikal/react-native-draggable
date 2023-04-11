@@ -268,11 +268,7 @@ export default function Draggable(props) {
         pointerEvents="box-none"
         {...animatedViewProps}
         {...panResponder.panHandlers}
-        style={pan.current.getLayout(),
-        {
-        height: maxY,
-        width: maxX,
-        }}>
+        style={pan.current.getLayout()}>
         <TouchableOpacity
           {...touchableOpacityProps}
           onLayout={handleOnLayout}
